@@ -57,7 +57,7 @@ func initBrowser() {
 		panic("No chromium executable found!")
 	}
 	// Launch the headless browser instance
-	u := launcher.New().Bin(path).MustLaunch()
+	u := launcher.New().Bin(path).NoSandbox(true).MustLaunch()
 	browser = rod.New().ControlURL(u).MustConnect()
 }
 

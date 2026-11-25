@@ -3,7 +3,8 @@
 FROM golang:1.23-alpine
 
 RUN apk update && apk upgrade
-RUN apk add chromium font-noto font-noto-emoji
+# CJK glyphs are packaged separately from the base Noto fonts.
+RUN apk add chromium font-noto font-noto-cjk font-noto-emoji
 
 WORKDIR /app
 
